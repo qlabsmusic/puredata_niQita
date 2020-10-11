@@ -1,0 +1,3 @@
+#N canvas 517 35 825 867 12;
+#X obj 74 86 niQita_001-clock;
+#X obj 224 86 niQita_002-seq;

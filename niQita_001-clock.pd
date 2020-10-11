@@ -1,0 +1,178 @@
+#N canvas 473 2 958 988 12;
+#N canvas 444 166 985 644 clock-ka-di-me 0;
+#X msg 272 142 1;
+#X msg 239 142 0;
+#X obj 239 106 sel 0 1;
+#X obj 284 208 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 316 207 5 0 0 0 - - -;
+#X obj 284 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 387 31 expr (60000/$f1);
+#X obj 284 235 metro;
+#X floatatom 387 7 5 0 0 0 - out_clock_bpm -;
+#X obj 510 369 sel 1;
+#X obj 510 393 bng 15 250 50 0 clock_quarter-note empty empty 17 7
+0 10 -262144 -1 -1;
+#X obj 239 79 tgl 15 0 empty out_clock_run empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 143 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 590 413 s clock_1ppqn;
+#X obj 143 296 s clock-reset;
+#X obj 510 458 counter 1 4;
+#X floatatom 460 491 5 0 0 0 - - #0-gui-clock-beat;
+#X obj 547 323 bng 15 250 50 0 empty clock-reset empty 17 7 0 10 -262144
+-1 -1;
+#X obj 547 437 bng 15 250 50 0 empty clock-reset empty 17 7 0 10 -262144
+-1 -1;
+#X obj 533 534 bng 15 250 50 0 empty clock-reset empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 460 611 5 0 0 0 - - #0-gui-clock-bar;
+#X obj 510 504 sel 1;
+#X obj 712 194 * 4;
+#X obj 510 556 counter;
+#X obj 510 582 + 1;
+#X obj 510 209 sel 1;
+#X obj 510 234 bng 15 250 50 0 clock_quarter-note empty empty 17 7
+0 10 -262144 -1 -1;
+#X obj 547 163 bng 15 250 50 0 empty clock-reset empty 17 7 0 10 -262144
+-1 -1;
+#X obj 510 345 counter 1 4;
+#X floatatom 461 321 5 0 0 0 - - #0-gui-clock-sixteenth;
+#X obj 510 185 counter 1 6;
+#X obj 461 289 counter 1 4;
+#X obj 498 268 bng 15 250 50 0 empty clock-reset empty 17 7 0 10 -262144
+-1 -1;
+#X obj 540 582 change;
+#X obj 599 559 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 599 582 s clock-bar;
+#X obj 712 223 s clock_length_bar;
+#X obj 433 128 s clock_length_quarter;
+#X obj 590 283 s clock_4ppqn;
+#X obj 316 142 expr ($f1/48);
+#X obj 284 305 s clock_24ppqn;
+#X obj 578 12 loadbang;
+#X obj 508 68 f;
+#X floatatom 508 94 5 0 0 0 - - -;
+#X obj 578 38 delay 1001;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 2 1 0 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 1;
+#X connect 5 0 30 0;
+#X connect 5 0 40 0;
+#X connect 6 0 22 0;
+#X connect 6 0 37 0;
+#X connect 6 0 39 0;
+#X connect 6 0 42 1;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 10 0 15 0;
+#X connect 11 0 2 0;
+#X connect 12 0 14 0;
+#X connect 15 0 16 0;
+#X connect 15 0 21 0;
+#X connect 17 0 28 2;
+#X connect 18 0 15 2;
+#X connect 19 0 23 2;
+#X connect 21 0 23 0;
+#X connect 22 0 36 0;
+#X connect 23 0 24 0;
+#X connect 23 0 34 0;
+#X connect 24 0 20 0;
+#X connect 24 0 33 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 26 0 31 0;
+#X connect 26 0 38 0;
+#X connect 27 0 30 2;
+#X connect 28 0 9 0;
+#X connect 30 0 25 0;
+#X connect 31 0 29 0;
+#X connect 32 0 31 2;
+#X connect 34 0 35 0;
+#X connect 39 0 4 0;
+#X connect 41 0 44 0;
+#X connect 42 0 43 0;
+#X connect 43 0 37 0;
+#X connect 43 0 22 0;
+#X connect 44 0 42 0;
+#X restore 559 295 pd clock-ka-di-me;
+#X obj 407 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 407 155 s \$0-gui_clock_run;
+#X obj 582 38 loadbang;
+#X obj 582 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 763 44 \; pd dsp 1;
+#X obj 355 19 r interface-playstate;
+#X obj 407 51 ctlin 0 1;
+#X obj 406 552 r interface_button_save;
+#X obj 353 514 r interface-press-function;
+#X obj 353 540 + 1;
+#X floatatom 353 566 5 0 0 0 - - -;
+#X obj 353 625 gate 2 1;
+#X obj 406 670 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 406 693 \; pd-niQita101clock.pd menusave \;;
+#X obj 695 100 r debug_clock_bpm;
+#X obj 582 245 s gui_clock_bpm;
+#X floatatom 695 126 5 0 0 0 - - -;
+#X obj 770 176 loadbang;
+#X obj 770 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 770 236 0;
+#X obj 695 275 array set \$0-clock_bpm;
+#N canvas 0 50 450 300 memory 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-clock_bpm 1 float 3;
+#A 0 90;
+#X coords 0 177 1 50 200 200 1 0 0;
+#X restore 102 49 graph;
+#X restore 191 491 pd memory;
+#X obj 582 159 array get \$0-clock_bpm;
+#X msg 389 420 \; pd midi-dialog 11 3 1 0 0 0 0 0 0 12 5 3 6 0 0 0
+0 0 14 16;
+#X obj 100 100 cnv 15 150 175 empty empty empty 20 12 0 14 -162280
+-66577 0;
+#X obj 157 118 tgl 33 0 out_clock_run \$0-gui_clock_run Run 5 -7 0
+12 -1 -4034 -66577 0 1;
+#X floatatom 157 173 5 20 320 2 Tempo gui_clock_bpm out_clock_bpm;
+#X floatatom 157 213 5 0 0 2 Beat #0-gui-clock-beat #0_clock_beat;
+#X floatatom 117 213 5 0 0 2 Bar #0-gui-clock-bar #0-clock-bar;
+#X floatatom 197 213 5 0 0 2 16th #0-gui-clock-sixteenth #0-clock-sixteenth
+;
+#X obj 118 234 bng 35 250 50 0 empty clock-bar empty 17 7 0 10 -1 -4034
+-1;
+#X obj 158 234 bng 35 250 50 0 empty clock_1ppqn empty 17 7 0 10 -1
+-4034 -1;
+#X obj 198 234 bng 35 250 50 0 empty clock_4ppqn empty 17 7 0 10 -1
+-4034 -1;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 23 0;
+#X connect 6 0 2 0;
+#X connect 7 0 1 0;
+#X connect 8 0 12 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 1 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 17 0;
+#X connect 17 0 21 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 1;
+#X connect 20 0 23 1;
+#X connect 23 0 16 0;
+#X coords 0 -1 1 1 150 175 2 100 100;
