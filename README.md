@@ -14,4 +14,4 @@ Also, per-step "parameter locks" for the modwheel (CC1) and two other CC control
 
 The sequencer allows for 16 steps per sequence, and can store a total of 128 patterns (grouped into 16 banks of 16 patterns) into memory.
 
-To top it all off, patterns can be sequenced in chains, up to 16, each chain up to 8 patterns in length.
+To top it all off, patterns can be sequenced in chains, up to 16, each chain up to 8 patterns in length and allowing for repetition, unlike the Elektron sequencers which inspired the feature.
