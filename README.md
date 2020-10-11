@@ -1,5 +1,8 @@
-# pd_niQita
+# puredata_niQita
 niQita - Monophonic Sequencer for Pure Data
+
+[MADE IN PURE DATA v0.51.1]
+[REQUIRES the latest CYCLONE library v0.5.3]
 
 niQita is a monophonic MIDI sequencer for Pure Data, designed particularly for basslines and rhythmic hooks. Think of it like a guided MIDI missile that allows for nuanced and expressive performance of a MIDI instrument.
 
